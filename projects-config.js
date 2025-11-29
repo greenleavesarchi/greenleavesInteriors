@@ -81,6 +81,18 @@ const PROJECTS = [
             "frontend_3.JPG"
         ]
     }
+    ,
+    {
+        id: "ENTRY",
+        name: "ENTRY_PICS",
+        folder: "PROJECTS/ENTRY",
+        description: "TESTING PROJECT",
+        images: [
+            "1.JPG",
+            "2.JPG",
+            "3.JPG"
+        ]
+    }
     // TO ADD A NEW PROJECT:
     // 1. Create a new folder with your project name (e.g., "NEW_PROJECT")
     // 2. Put all JPG images in that folder
@@ -100,3 +112,4 @@ const PROJECTS = [
     }
     */
 ];
+
