@@ -6,7 +6,7 @@ const PROJECTS = [
         id: "khammam",
         name: "KHAMMAM",
         folder: "PROJECTS/khammam",
-        description: "A modern residential complex featuring contemporary design elements and sustainable architecture. Located in the heart of Khammam, this project combines luxury living with eco-friendly practices. The development includes spacious apartments with premium amenities, green spaces, and state-of-the-art facilities designed for modern families seeking comfort and style.",
+        description: "A modern residential complex featuring contemporary design elements and sustainable architecture in the heart of Khammam.",
         images: [
             "17e9ebd4-db76-4e47-81bb-1757f77be418.jpg",
             "1f5366db-94d5-40c2-955c-b530ab0e1d8b.jpg",
@@ -24,7 +24,7 @@ const PROJECTS = [
         id: "prestage",
         name: "PRESTAGE",
         folder: "PROJECTS/Prestage",
-        description: "An iconic commercial and residential development that sets new standards in architectural excellence. Prestage offers a perfect blend of modern infrastructure and elegant design, creating spaces that inspire productivity and relaxation. With world-class amenities and strategic location, this project represents the pinnacle of contemporary urban living.",
+        description: "An iconic commercial and residential development setting new standards in architectural excellence with world-class amenities.",
         images: [
             "CollageMaker_20211108_150645508_Original.JPG",
             "CollageMaker_20211108_152042092_Original.JPG",
@@ -42,7 +42,7 @@ const PROJECTS = [
         id: "hastinapuram",
         name: "HASTINAPURAM",
         folder: "PROJECTS/Hastinapuram",
-        description: "A prestigious township project designed to provide a complete lifestyle experience. Hastinapuram features thoughtfully planned residences, community spaces, and recreational facilities. The project emphasizes sustainability and modern living, offering residents a harmonious balance between nature and urban convenience in a well-connected locality.",
+        description: "A prestigious township project with thoughtfully planned residences, community spaces, and emphasis on sustainable modern living.",
         images: [
             "IMG_7820.JPG",
             "IMG_7822.JPG",
@@ -58,7 +58,7 @@ const PROJECTS = [
         id: "dd-colony",
         name: "DD COLONY",
         folder: "PROJECTS/DD_COLONY",
-        description: "A meticulously planned residential colony that embodies modern architectural vision and traditional values. DD Colony offers premium housing solutions with focus on community living and quality construction. The project features wide roads, landscaped gardens, and essential amenities, making it an ideal choice for families seeking a peaceful and well-planned neighborhood.",
+        description: "A meticulously planned residential colony with premium housing, wide roads, landscaped gardens, and essential amenities for modern families.",
         images: [
             "IMG_9367.JPG",
             "IMG_9688.JPG",
@@ -68,17 +68,6 @@ const PROJECTS = [
             "IMG_9738.JPG",
             "IMG_9739.JPG",
             "IMG_9741.JPG"
-        ]
-    },
-    {
-        id: "ENTRY",
-        name: "ENTRY_PICS",
-        folder: "PROJECTS/ENTRY",
-        description: "TESTING PROJECT",
-        images: [
-            "1.JPG",
-            "2.JPG",
-            "3.JPG"
         ]
     }
     // TO ADD A NEW PROJECT:
@@ -100,5 +89,3 @@ const PROJECTS = [
     }
     */
 ];
-
-

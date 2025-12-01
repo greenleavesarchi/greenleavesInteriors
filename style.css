@@ -520,23 +520,63 @@ footer {
     scroll-margin-top: 80px;
 }
 
-.project {
+#projects-container {
     display: flex;
-    gap: 0;
-    margin-bottom: 60px;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.project {
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+}
+
+.project-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.project-header h3 {
+    font-size: 32px;
+    color: #d1a394;
+    margin-bottom: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.project-header p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-slideshows-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.project-slideshow-wrapper h4 {
+    text-align: center;
+    font-size: 18px;
+    color: #d1a394;
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .project-slideshow {
     position: relative;
-    width: 50%;
-    height: 500px;
+    width: 100%;
+    height: 300px;
     overflow: hidden;
     background: #000;
-    min-height: 500px;
+    border-radius: 8px;
 }
 
 .project-slide {
@@ -562,10 +602,10 @@ footer {
     top: 50%;
     transform: translateY(-50%);
     width: auto;
-    padding: 12px;
+    padding: 8px 12px;
     color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     transition: 0.3s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
@@ -580,29 +620,6 @@ footer {
 
 .project-prev:hover, .project-next:hover {
     background-color: rgba(0, 0, 0, 0.8);
-}
-
-.project-info {
-    width: 50%;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.project-info h3 {
-    font-size: 32px;
-    color: #d1a394;
-    margin-bottom: 20px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.project-info p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #555;
-    text-align: justify;
 }
 
 /* Services Section */
@@ -1354,15 +1371,24 @@ footer {
     }
 
     .project {
-        flex-direction: column;
-        margin-bottom: 40px;
-        border-radius: 5px;
+        padding: 20px;
+    }
+
+    .project-header h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .project-header p {
+        font-size: 14px;
+    }
+
+    .project-slideshows-container {
+        grid-template-columns: 1fr;
     }
 
     .project-slideshow {
-        width: 100%;
         height: 300px;
-        min-height: 300px;
     }
 
     .project-slide {
@@ -1376,26 +1402,6 @@ footer {
     .project-prev, .project-next {
         padding: 8px;
         font-size: 16px;
-    }
-
-    .project-info {
-        width: 100%;
-        padding: 25px 15px;
-    }
-
-    .project-info h3 {
-        font-size: 20px;
-        margin-bottom: 15px;
-    }
-
-    .project-prev, .project-next {
-        padding: 10px;
-        font-size: 18px;
-    }
-
-    .project-info p {
-        font-size: 14px;
-        line-height: 1.6;
     }
 
     .service-grid {

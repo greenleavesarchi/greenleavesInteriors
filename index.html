@@ -100,127 +100,15 @@
         <section id="services" class="services-section">
             <h2 class="section-heading">SERVICES</h2>
             
-            <div class="service-tabs">
-                <button class="service-tab active" onclick="showService('kitchen')">KITCHEN</button>
-                <button class="service-tab" onclick="showService('bedroom')">BEDROOM</button>
-                <button class="service-tab" onclick="showService('livingroom')">LIVING ROOM</button>
-                <button class="service-tab" onclick="showService('tvunit')">TV UNIT</button>
-                <button class="service-tab" onclick="showService('pooja')">POOJA ROOM</button>
+            <div class="service-tabs" id="service-tabs">
+                <!-- Tabs will be loaded dynamically -->
             </div>
 
-            <!-- Kitchen Service -->
-            <div id="kitchen" class="service-content active">
-                <div class="service-grid">
-                    <div class="service-item" onclick="openGallery('kitchen', 0)">
-                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Kitchen 1">
-                    </div>
-                    <div class="service-item" onclick="openGallery('kitchen', 1)">
-                        <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=600&h=400&fit=crop" alt="Kitchen 2">
-                    </div>
-                    <div class="service-item" onclick="openGallery('kitchen', 2)">
-                        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=600&h=400&fit=crop" alt="Kitchen 3">
-                    </div>
-                    <div class="service-item" onclick="openGallery('kitchen', 3)">
-                        <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=600&h=400&fit=crop" alt="Kitchen 4">
-                    </div>
-                </div>
+            <div id="services-container">
+                <!-- Service content will be loaded dynamically -->
             </div>
 
-            <!-- Bedroom Service -->
-            <div id="bedroom" class="service-content">
-                <div class="service-grid">
-                    <div class="service-item" onclick="openGallery('bedroom', 0)">
-                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&h=400&fit=crop" alt="Bedroom 1">
-                    </div>
-                    <div class="service-item" onclick="openGallery('bedroom', 1)">
-                        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&h=400&fit=crop" alt="Bedroom 2">
-                    </div>
-                    <div class="service-item" onclick="openGallery('bedroom', 2)">
-                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&h=400&fit=crop" alt="Bedroom 3">
-                    </div>
-                    <div class="service-item" onclick="openGallery('bedroom', 3)">
-                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&h=400&fit=crop" alt="Bedroom 4">
-                    </div>
-                </div>
-            </div>
 
-            <!-- Living Room Service -->
-            <div id="livingroom" class="service-content">
-                <div class="service-grid">
-                    <div class="service-item" onclick="openGallery('livingroom', 0)">
-                        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&h=400&fit=crop" alt="Living Room 1">
-                    </div>
-                    <div class="service-item" onclick="openGallery('livingroom', 1)">
-                        <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=600&h=400&fit=crop" alt="Living Room 2">
-                    </div>
-                    <div class="service-item" onclick="openGallery('livingroom', 2)">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop" alt="Living Room 3">
-                    </div>
-                    <div class="service-item" onclick="openGallery('livingroom', 3)">
-                        <img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?w=600&h=400&fit=crop" alt="Living Room 4">
-                    </div>
-                </div>
-            </div>
-
-            <!-- TV Unit Service -->
-            <div id="tvunit" class="service-content">
-                <div class="service-grid">
-                    <div class="service-item" onclick="openGallery('tvunit', 0)">
-                        <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=600&h=400&fit=crop" alt="TV Unit 1">
-                    </div>
-                    <div class="service-item" onclick="openGallery('tvunit', 1)">
-                        <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&h=400&fit=crop" alt="TV Unit 2">
-                    </div>
-                    <div class="service-item" onclick="openGallery('tvunit', 2)">
-                        <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&h=400&fit=crop" alt="TV Unit 3">
-                    </div>
-                    <div class="service-item" onclick="openGallery('tvunit', 3)">
-                        <img src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=600&h=400&fit=crop" alt="TV Unit 4">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pooja Room Service -->
-            <div id="pooja" class="service-content">
-                <div class="service-grid">
-                    <div class="service-item" onclick="openGallery('pooja', 0)">
-                        <img src="POOJA_ROOM/POOJA_ROOM_1.JPG" alt="Pooja Room 1">
-                    </div>
-                    <div class="service-item" onclick="openGallery('pooja', 1)">
-                        <img src="POOJA_ROOM/POOJA_ROOM_2.JPG" alt="Pooja Room 2">
-                    </div>
-                    <div class="service-item" onclick="openGallery('pooja', 2)">
-                        <img src="POOJA_ROOM/POOJA_ROOM_3.JPG" alt="Pooja Room 3">
-                    </div>
-                    <div class="service-item" onclick="openGallery('pooja', 3)">
-                        <img src="POOJA_ROOM/POOJA_ROOM_4.JPG" alt="Pooja Room 4">
-                    </div>
-                    <div class="service-item" onclick="openGallery('pooja', 4)">
-                        <img src="POOJA_ROOM/POOJA_ROOM_5.JPG" alt="Pooja Room 5">
-                    </div>
-                    <div class="service-item" onclick="openGallery('pooja', 5)">
-                        <img src="POOJA_ROOM/POOJA_ROOM_6.JPG" alt="Pooja Room 6">
-                    </div>
-                    <div class="service-item" onclick="openGallery('pooja', 6)">
-                        <img src="POOJA_ROOM/POOJA_ROOM_7.JPG" alt="Pooja Room 7">
-                    </div>
-                    <div class="service-item" onclick="openGallery('pooja', 7)">
-                        <img src="POOJA_ROOM/POOJA_ROOM_8.JPG" alt="Pooja Room 8">
-                    </div>
-                    <div class="service-item" onclick="openGallery('pooja', 8)">
-                        <img src="POOJA_ROOM/POOJA_ROOM_9.JPG" alt="Pooja Room 9">
-                    </div>
-                    <div class="service-item" onclick="openGallery('pooja', 9)">
-                        <img src="POOJA_ROOM/POOJA_ROOM_10.JPG" alt="Pooja Room 10">
-                    </div>
-                    <div class="service-item" onclick="openGallery('pooja', 10)">
-                        <img src="POOJA_ROOM/POOJA_ROOM_11.JPG" alt="Pooja Room 11">
-                    </div>
-                    <div class="service-item" onclick="openGallery('pooja', 11)">
-                        <img src="POOJA_ROOM/POOJA_ROOM_12.JPG" alt="Pooja Room 12">
-                    </div>
-                </div>
-            </div>
         </section>
 
         <!-- About Section -->
@@ -435,11 +323,77 @@
         // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
             loadSlideshow(); // Load slideshow images dynamically
+            loadServices(); // Load service images dynamically
             generateProjects();
             initializeSlideshows();
             initializeBeforeAfterSlider();
             initializePhoneInput();
         });
+
+        // Service categories configuration
+        const SERVICES = [
+            { id: 'kitchen', name: 'KITCHEN', folder: 'SERVICES/KITCHEN', prefix: 'KITCHEN_' },
+            { id: 'bedroom', name: 'BEDROOM', folder: 'SERVICES/BEDROOM', prefix: 'BEDROOM_' },
+            { id: 'livingroom', name: 'LIVING ROOM', folder: 'SERVICES/LIVING_ROOM', prefix: 'LIVING_ROOM_' },
+            { id: 'tvunit', name: 'TV UNIT', folder: 'SERVICES/TV_UNIT', prefix: 'TV_UNIT_' },
+            { id: 'pooja', name: 'POOJA ROOM', folder: 'SERVICES/POOJA_ROOM', prefix: 'POOJA_ROOM_' }
+        ];
+
+        // Store loaded service images
+        let galleryImages = {};
+
+        // Load services dynamically
+        async function loadServices() {
+            const tabsContainer = document.getElementById('service-tabs');
+            const servicesContainer = document.getElementById('services-container');
+            const extension = '.JPG';
+            const maxImages = 50;
+            
+            const tabFragment = document.createDocumentFragment();
+            const contentFragment = document.createDocumentFragment();
+            
+            for (let i = 0; i < SERVICES.length; i++) {
+                const service = SERVICES[i];
+                const images = [];
+                
+                // Load images sequentially
+                for (let j = 1; j <= maxImages; j++) {
+                    const imgPath = `${service.folder}/${service.prefix}${j}${extension}`;
+                    if (!await checkImageExists(imgPath)) break;
+                    images.push(imgPath);
+                }
+                
+                // Store images for gallery
+                galleryImages[service.id] = images;
+                
+                // Create tab button
+                const tab = document.createElement('button');
+                tab.className = i === 0 ? 'service-tab active' : 'service-tab';
+                tab.textContent = service.name;
+                tab.onclick = () => showService(service.id);
+                tabFragment.appendChild(tab);
+                
+                // Create service content
+                const content = document.createElement('div');
+                content.id = service.id;
+                content.className = i === 0 ? 'service-content active' : 'service-content';
+                
+                // Create grid with images
+                const gridHTML = images.map((imgPath, index) => `
+                    <div class="service-item" onclick="openGallery('${service.id}', ${index})">
+                        <img src="${imgPath}" alt="${service.name} ${index + 1}" loading="lazy">
+                    </div>
+                `).join('');
+                
+                content.innerHTML = `<div class="service-grid">${gridHTML}</div>`;
+                contentFragment.appendChild(content);
+                
+                console.log(`Loaded ${images.length} images for ${service.name}`);
+            }
+            
+            tabsContainer.appendChild(tabFragment);
+            servicesContainer.appendChild(contentFragment);
+        }
 
         // Default captions for slideshow images
         const SLIDESHOW_CAPTIONS = [
@@ -459,49 +413,45 @@
             const dotsContainer = document.getElementById('dots-container');
             const basePath = 'HOME_PAGE_SLIDESHOW/SLIDESHOW_';
             const extension = '.JPG';
+            const maxSlides = 20;
+            
+            const slideFragment = document.createDocumentFragment();
+            const dotFragment = document.createDocumentFragment();
             let slideCount = 0;
-            let maxSlides = 20; // Maximum number to check
 
-            // Try to load images sequentially
+            // Load images sequentially
             for (let i = 1; i <= maxSlides; i++) {
-                const imgPath = basePath + i + extension;
-                
-                // Check if image exists
-                const exists = await checkImageExists(imgPath);
-                if (!exists) {
-                    break; // Stop when we can't find the next image
-                }
+                const imgPath = `${basePath}${i}${extension}`;
+                if (!await checkImageExists(imgPath)) break;
                 
                 slideCount++;
+                const isFirst = i === 1;
                 
                 // Create slide
                 const slide = document.createElement('div');
-                slide.className = 'slide' + (i === 1 ? ' active' : '');
+                slide.className = isFirst ? 'slide active' : 'slide';
                 slide.innerHTML = `
-                    <img src="${imgPath}" alt="Modern Architecture ${i}">
+                    <img src="${imgPath}" alt="Modern Architecture ${i}" loading="lazy">
                     <div class="slide-caption">${SLIDESHOW_CAPTIONS[i - 1] || 'Beautiful Design'}</div>
                 `;
-                slideshowContainer.appendChild(slide);
+                slideFragment.appendChild(slide);
                 
                 // Create dot
                 const dot = document.createElement('span');
-                dot.className = 'dot' + (i === 1 ? ' active' : '');
-                dot.onclick = function() { currentSlide(i); };
-                dotsContainer.appendChild(dot);
+                dot.className = isFirst ? 'dot active' : 'dot';
+                dot.onclick = () => currentSlide(i);
+                dotFragment.appendChild(dot);
             }
 
-            // Add navigation arrows
-            const prevArrow = document.createElement('a');
-            prevArrow.className = 'prev';
-            prevArrow.onclick = function() { changeSlide(-1); };
-            prevArrow.innerHTML = '❮';
-            slideshowContainer.appendChild(prevArrow);
+            // Batch append slides and dots
+            slideshowContainer.appendChild(slideFragment);
+            dotsContainer.appendChild(dotFragment);
 
-            const nextArrow = document.createElement('a');
-            nextArrow.className = 'next';
-            nextArrow.onclick = function() { changeSlide(1); };
-            nextArrow.innerHTML = '❯';
-            slideshowContainer.appendChild(nextArrow);
+            // Add navigation arrows
+            slideshowContainer.insertAdjacentHTML('beforeend', `
+                <a class="prev" onclick="changeSlide(-1)">❮</a>
+                <a class="next" onclick="changeSlide(1)">❯</a>
+            `);
 
             console.log(`Loaded ${slideCount} slideshow images`);
         }
@@ -525,29 +475,46 @@
                 return;
             }
             
-            PROJECTS.forEach((project, index) => {
-                const projectHTML = `
-                    <div class="project">
-                        <div class="project-slideshow">
+            const stages = ['Stage 1', 'Stage 2', 'Stage 3'];
+            const fragment = document.createDocumentFragment();
+            
+            PROJECTS.forEach((project, projectIndex) => {
+                const projectDiv = document.createElement('div');
+                projectDiv.className = 'project';
+                
+                // Create slideshows HTML
+                const slideshowsHTML = stages.map((stage, stageIndex) => `
+                    <div class="project-slideshow-wrapper">
+                        <h4>${stage}</h4>
+                        <div class="project-slideshow" data-project="${projectIndex}" data-stage="${stageIndex}">
                             ${project.images.map((img, imgIndex) => `
                                 <div class="project-slide ${imgIndex === 0 ? 'active' : ''}">
-                                    <img src="${project.folder}/${img}" alt="${project.name} ${imgIndex + 1}">
+                                    <img src="${project.folder}/${img}" alt="${project.name} ${imgIndex + 1}" loading="lazy">
                                 </div>
                             `).join('')}
-                            <a class="project-prev" onclick="changeProjectSlide(${index}, -1)">❮</a>
-                            <a class="project-next" onclick="changeProjectSlide(${index}, 1)">❯</a>
-                        </div>
-                        <div class="project-info">
-                            <h3>${project.name}</h3>
-                            <p>${project.description}</p>
+                            <a class="project-prev" onclick="changeProjectSlide(${projectIndex}, ${stageIndex}, -1)">❮</a>
+                            <a class="project-next" onclick="changeProjectSlide(${projectIndex}, ${stageIndex}, 1)">❯</a>
                         </div>
                     </div>
+                `).join('');
+                
+                projectDiv.innerHTML = `
+                    <div class="project-header">
+                        <h3>${project.name}</h3>
+                        <p>${project.description}</p>
+                    </div>
+                    <div class="project-slideshows-container">
+                        ${slideshowsHTML}
+                    </div>
                 `;
-                container.innerHTML += projectHTML;
+                
+                fragment.appendChild(projectDiv);
             });
             
-            // Initialize project slide indexes after projects are created
-            window.projectSlideIndexes = new Array(PROJECTS.length).fill(1);
+            container.appendChild(fragment);
+            
+            // Initialize project slide indexes: [projectIndex][stageIndex]
+            window.projectSlideIndexes = PROJECTS.map(() => [1, 1, 1]);
         }
 
         let slideIndex = 1;
@@ -577,35 +544,24 @@
         }
 
         function showSlides(n) {
-            let slides = document.getElementsByClassName("slide");
-            let dots = document.getElementsByClassName("dot");
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
             
-            if (!slides || slides.length === 0) return;
+            if (!slides.length) return;
             
-            if (n > slides.length) {
-                slideIndex = 1;
-            }
-            if (n < 1) {
-                slideIndex = slides.length;
-            }
+            // Handle wraparound
+            if (n > slides.length) slideIndex = 1;
+            if (n < 1) slideIndex = slides.length;
             
-            // Hide all slides
+            // Update slides and dots in single loop
             for (let i = 0; i < slides.length; i++) {
                 slides[i].classList.remove("active");
+                if (dots[i]) dots[i].classList.remove("active");
             }
             
-            // Remove active class from all dots
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].classList.remove("active");
-            }
-            
-            // Show current slide and activate dot
-            if (slides[slideIndex - 1]) {
-                slides[slideIndex - 1].classList.add("active");
-            }
-            if (dots[slideIndex - 1]) {
-                dots[slideIndex - 1].classList.add("active");
-            }
+            // Show current slide and dot
+            slides[slideIndex - 1].classList.add("active");
+            if (dots[slideIndex - 1]) dots[slideIndex - 1].classList.add("active");
         }
 
         // Auto-advance slideshow
@@ -619,38 +575,32 @@
 
         // Project slideshow functions
         function initProjectSlideshows() {
-            let projects = document.getElementsByClassName("project");
-            for (let i = 0; i < projects.length; i++) {
-                showProjectSlides(i, window.projectSlideIndexes[i]);
-            }
+            // Slideshows are already initialized with first slide active
         }
 
-        function changeProjectSlide(projectIndex, n) {
-            showProjectSlides(projectIndex, window.projectSlideIndexes[projectIndex] += n);
+        function changeProjectSlide(projectIndex, stageIndex, n) {
+            const currentIndex = window.projectSlideIndexes[projectIndex][stageIndex];
+            const newIndex = currentIndex + n;
+            showProjectSlides(projectIndex, stageIndex, newIndex);
         }
 
-        function showProjectSlides(projectIndex, n) {
-            let projects = document.getElementsByClassName("project");
-            if (!projects || !projects[projectIndex]) return;
+        function showProjectSlides(projectIndex, stageIndex, n) {
+            const slideshow = document.querySelector(`[data-project="${projectIndex}"][data-stage="${stageIndex}"]`);
+            if (!slideshow) return;
             
-            let slides = projects[projectIndex].getElementsByClassName("project-slide");
-            if (!slides || slides.length === 0) return;
+            const slides = slideshow.getElementsByClassName("project-slide");
+            if (!slides.length) return;
             
-            if (n > slides.length) {
-                window.projectSlideIndexes[projectIndex] = 1;
-            }
-            if (n < 1) {
-                window.projectSlideIndexes[projectIndex] = slides.length;
-            }
+            // Handle wraparound
+            if (n > slides.length) n = 1;
+            if (n < 1) n = slides.length;
             
-            // Hide all slides in this project
+            // Update index
+            window.projectSlideIndexes[projectIndex][stageIndex] = n;
+            
+            // Update slides
             for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active");
-            }
-            
-            // Show current slide
-            if (slides[window.projectSlideIndexes[projectIndex] - 1]) {
-                slides[window.projectSlideIndexes[projectIndex] - 1].classList.add("active");
+                slides[i].classList.toggle("active", i === n - 1);
             }
         }
 
@@ -745,47 +695,6 @@
         }
 
         // Gallery functionality
-        const galleryImages = {
-            kitchen: [
-                'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=800&fit=crop',
-                'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=1200&h=800&fit=crop',
-                'https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1200&h=800&fit=crop',
-                'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=1200&h=800&fit=crop'
-            ],
-            bedroom: [
-                'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=800&fit=crop',
-                'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1200&h=800&fit=crop',
-                'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&h=800&fit=crop',
-                'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&h=800&fit=crop'
-            ],
-            livingroom: [
-                'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&h=800&fit=crop',
-                'https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1200&h=800&fit=crop',
-                'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=800&fit=crop',
-                'https://images.unsplash.com/photo-1567016432779-094069958ea5?w=1200&h=800&fit=crop'
-            ],
-            tvunit: [
-                'https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=1200&h=800&fit=crop',
-                'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=1200&h=800&fit=crop',
-                'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=1200&h=800&fit=crop',
-                'https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=1200&h=800&fit=crop'
-            ],
-            pooja: [
-                'POOJA_ROOM/POOJA_ROOM_1.JPG',
-                'POOJA_ROOM/POOJA_ROOM_2.JPG',
-                'POOJA_ROOM/POOJA_ROOM_3.JPG',
-                'POOJA_ROOM/POOJA_ROOM_4.JPG',
-                'POOJA_ROOM/POOJA_ROOM_5.JPG',
-                'POOJA_ROOM/POOJA_ROOM_6.JPG',
-                'POOJA_ROOM/POOJA_ROOM_7.JPG',
-                'POOJA_ROOM/POOJA_ROOM_8.JPG',
-                'POOJA_ROOM/POOJA_ROOM_9.JPG',
-                'POOJA_ROOM/POOJA_ROOM_10.JPG',
-                'POOJA_ROOM/POOJA_ROOM_11.JPG',
-                'POOJA_ROOM/POOJA_ROOM_12.JPG'
-            ]
-        };
-
         let currentGalleryService = '';
         let currentGalleryIndex = 0;
 
