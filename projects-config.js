@@ -71,18 +71,6 @@ const PROJECTS = [
         ]
     },
     {
-        id: "TESTNEWPROJECT",
-        name: "testNewProject",
-        folder: "PROJECTS/testNewProject",
-        description: "This is a test new project adding as new",
-        images: [
-            "frontend_1.JPG",
-            "frontend_2.JPG",
-            "frontend_3.JPG"
-        ]
-    }
-    ,
-    {
         id: "ENTRY",
         name: "ENTRY_PICS",
         folder: "PROJECTS/ENTRY",
@@ -112,4 +100,5 @@ const PROJECTS = [
     }
     */
 ];
+
 
