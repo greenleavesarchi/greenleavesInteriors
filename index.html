@@ -47,42 +47,12 @@
             </div>
             
             <div class="hero-slideshow">
-                <div class="slideshow-container">
-                    <div class="slide active">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop" alt="Modern Architecture 1">
-                        <div class="slide-caption">Modern Residential Design</div>
-                    </div>
-
-                    <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop" alt="Modern Architecture 2">
-                        <div class="slide-caption">Contemporary Living Spaces</div>
-                    </div>
-
-                    <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=400&fit=crop" alt="Modern Architecture 3">
-                        <div class="slide-caption">Sustainable Architecture</div>
-                    </div>
-
-                    <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&h=400&fit=crop" alt="Modern Architecture 4">
-                        <div class="slide-caption">Innovative Design Solutions</div>
-                    </div>
-
-                    <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&h=400&fit=crop" alt="Modern Architecture 5">
-                        <div class="slide-caption">Luxury Interior Spaces</div>
-                    </div>
-
-                    <a class="prev" onclick="changeSlide(-1)">❮</a>
-                    <a class="next" onclick="changeSlide(1)">❯</a>
+                <div class="slideshow-container" id="slideshow-container">
+                    <!-- Slides will be loaded dynamically -->
                 </div>
 
-                <div class="dots-container">
-                    <span class="dot active" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
-                    <span class="dot" onclick="currentSlide(5)"></span>
+                <div class="dots-container" id="dots-container">
+                    <!-- Dots will be loaded dynamically -->
                 </div>
             </div>
         </div>
@@ -96,9 +66,9 @@
             <h2 class="section-heading">INTERIOR TRANSFORMATION</h2>
             <div class="before-after-container">
                 <div class="before-after-slider">
-                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1000&h=600&fit=crop" alt="After - Kitchen Interior Design" class="after-image">
+                    <img src="AFTER.JPG" alt="After - Kitchen Interior Design" class="after-image">
                     <div class="slider-overlay">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1000&h=600&fit=crop" alt="Before - Empty Kitchen" class="before-image">
+                        <img src="BEFORE.JPG" alt="Before - Empty Kitchen" class="before-image">
                     </div>
                     <div class="slider-handle">
                         <div class="slider-line"></div>
@@ -224,6 +194,30 @@
                     </div>
                     <div class="service-item" onclick="openGallery('pooja', 3)">
                         <img src="POOJA_ROOM/POOJA_ROOM_4.JPG" alt="Pooja Room 4">
+                    </div>
+                    <div class="service-item" onclick="openGallery('pooja', 4)">
+                        <img src="POOJA_ROOM/POOJA_ROOM_5.JPG" alt="Pooja Room 5">
+                    </div>
+                    <div class="service-item" onclick="openGallery('pooja', 5)">
+                        <img src="POOJA_ROOM/POOJA_ROOM_6.JPG" alt="Pooja Room 6">
+                    </div>
+                    <div class="service-item" onclick="openGallery('pooja', 6)">
+                        <img src="POOJA_ROOM/POOJA_ROOM_7.JPG" alt="Pooja Room 7">
+                    </div>
+                    <div class="service-item" onclick="openGallery('pooja', 7)">
+                        <img src="POOJA_ROOM/POOJA_ROOM_8.JPG" alt="Pooja Room 8">
+                    </div>
+                    <div class="service-item" onclick="openGallery('pooja', 8)">
+                        <img src="POOJA_ROOM/POOJA_ROOM_9.JPG" alt="Pooja Room 9">
+                    </div>
+                    <div class="service-item" onclick="openGallery('pooja', 9)">
+                        <img src="POOJA_ROOM/POOJA_ROOM_10.JPG" alt="Pooja Room 10">
+                    </div>
+                    <div class="service-item" onclick="openGallery('pooja', 10)">
+                        <img src="POOJA_ROOM/POOJA_ROOM_11.JPG" alt="Pooja Room 11">
+                    </div>
+                    <div class="service-item" onclick="openGallery('pooja', 11)">
+                        <img src="POOJA_ROOM/POOJA_ROOM_12.JPG" alt="Pooja Room 12">
                     </div>
                 </div>
             </div>
@@ -440,11 +434,87 @@
     <script>
         // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
+            loadSlideshow(); // Load slideshow images dynamically
             generateProjects();
             initializeSlideshows();
             initializeBeforeAfterSlider();
             initializePhoneInput();
         });
+
+        // Default captions for slideshow images
+        const SLIDESHOW_CAPTIONS = [
+            "Modern Residential Design",
+            "Contemporary Living Spaces",
+            "Sustainable Architecture",
+            "Innovative Design Solutions",
+            "Elegant Interior Design",
+            "Timeless Architecture",
+            "Creative Space Planning",
+            "Sophisticated Design"
+        ];
+
+        // Load slideshow images dynamically
+        async function loadSlideshow() {
+            const slideshowContainer = document.getElementById('slideshow-container');
+            const dotsContainer = document.getElementById('dots-container');
+            const basePath = 'HOME_PAGE_SLIDESHOW/SLIDESHOW_';
+            const extension = '.JPG';
+            let slideCount = 0;
+            let maxSlides = 20; // Maximum number to check
+
+            // Try to load images sequentially
+            for (let i = 1; i <= maxSlides; i++) {
+                const imgPath = basePath + i + extension;
+                
+                // Check if image exists
+                const exists = await checkImageExists(imgPath);
+                if (!exists) {
+                    break; // Stop when we can't find the next image
+                }
+                
+                slideCount++;
+                
+                // Create slide
+                const slide = document.createElement('div');
+                slide.className = 'slide' + (i === 1 ? ' active' : '');
+                slide.innerHTML = `
+                    <img src="${imgPath}" alt="Modern Architecture ${i}">
+                    <div class="slide-caption">${SLIDESHOW_CAPTIONS[i - 1] || 'Beautiful Design'}</div>
+                `;
+                slideshowContainer.appendChild(slide);
+                
+                // Create dot
+                const dot = document.createElement('span');
+                dot.className = 'dot' + (i === 1 ? ' active' : '');
+                dot.onclick = function() { currentSlide(i); };
+                dotsContainer.appendChild(dot);
+            }
+
+            // Add navigation arrows
+            const prevArrow = document.createElement('a');
+            prevArrow.className = 'prev';
+            prevArrow.onclick = function() { changeSlide(-1); };
+            prevArrow.innerHTML = '❮';
+            slideshowContainer.appendChild(prevArrow);
+
+            const nextArrow = document.createElement('a');
+            nextArrow.className = 'next';
+            nextArrow.onclick = function() { changeSlide(1); };
+            nextArrow.innerHTML = '❯';
+            slideshowContainer.appendChild(nextArrow);
+
+            console.log(`Loaded ${slideCount} slideshow images`);
+        }
+
+        // Check if an image exists
+        function checkImageExists(url) {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => resolve(true);
+                img.onerror = () => resolve(false);
+                img.src = url;
+            });
+        }
 
         // Generate projects dynamically from config
         function generateProjects() {
@@ -707,7 +777,12 @@
                 'POOJA_ROOM/POOJA_ROOM_4.JPG',
                 'POOJA_ROOM/POOJA_ROOM_5.JPG',
                 'POOJA_ROOM/POOJA_ROOM_6.JPG',
-                'POOJA_ROOM/POOJA_ROOM_7.JPG'
+                'POOJA_ROOM/POOJA_ROOM_7.JPG',
+                'POOJA_ROOM/POOJA_ROOM_8.JPG',
+                'POOJA_ROOM/POOJA_ROOM_9.JPG',
+                'POOJA_ROOM/POOJA_ROOM_10.JPG',
+                'POOJA_ROOM/POOJA_ROOM_11.JPG',
+                'POOJA_ROOM/POOJA_ROOM_12.JPG'
             ]
         };
 
