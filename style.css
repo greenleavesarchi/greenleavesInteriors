@@ -152,16 +152,17 @@ nav ul li a:hover {
     right: 0;
     bottom: 0;
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                      url('https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1920&h=1080&fit=crop');
+                      url('BACKGROUND.JPG');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    filter: blur(8px);
+    background-repeat: no-repeat;
+    filter: blur(1px);
     z-index: -1;
 }
 
 .hero-container {
-    max-width: 1400px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     padding: 0 40px;
@@ -552,7 +553,7 @@ footer {
 .project-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .project-prev, .project-next {
@@ -1145,7 +1146,7 @@ footer {
 
     .hero-section::before {
         background-attachment: scroll;
-        filter: blur(5px);
+        filter: blur(1px);
     }
 
     .hero-container {
