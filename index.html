@@ -32,18 +32,11 @@
         <div class="hero-container">
             <div class="hero-content">
                 <p class="hero-subtitle">Transforming Spaces, Creating Dreams</p>
-                <p class="hero-description">
-                    We are a premier architectural and interior design firm dedicated to creating sustainable, 
-                    innovative, and timeless spaces. Our passion lies in transforming your vision into reality 
-                    through thoughtful design and meticulous attention to detail.
-                </p>
+                
                 <blockquote class="hero-quote">
                     "Architecture is not just about buildings; it's about creating experiences that inspire and endure."
                 </blockquote>
-                <p class="hero-description">
-                    With years of expertise in residential and commercial design, we bring together aesthetics, 
-                    functionality, and environmental consciousness to every project.
-                </p>
+                
             </div>
             
             <div class="hero-slideshow">
@@ -467,7 +460,7 @@
         }
 
         // Generate projects dynamically from config
-        function generateProjects() {
+        async function generateProjects() {
             const container = document.getElementById('projects-container');
             
             if (typeof PROJECTS === 'undefined') {
@@ -475,21 +468,37 @@
                 return;
             }
             
-            const stages = ['Stage 1', 'Stage 2', 'Stage 3'];
-            const fragment = document.createDocumentFragment();
+            const stageDefinitions = [
+                { folder: 'INSIGHT', name: 'Insight' },
+                { folder: 'DESIGN', name: 'Design' },
+                { folder: 'EXECUTION', name: 'Execution' }
+            ];
             
-            PROJECTS.forEach((project, projectIndex) => {
+            const fragment = document.createDocumentFragment();
+            const allProjectSlideIndexes = [];
+            
+            for (let projectIndex = 0; projectIndex < PROJECTS.length; projectIndex++) {
+                const project = PROJECTS[projectIndex];
                 const projectDiv = document.createElement('div');
                 projectDiv.className = 'project';
                 
-                // Create slideshows HTML
-                const slideshowsHTML = stages.map((stage, stageIndex) => `
+                // Detect available stages and load images
+                const availableStages = [];
+                for (const stage of stageDefinitions) {
+                    const images = await loadStageImages(project, stage.folder);
+                    if (images.length > 0) {
+                        availableStages.push({ ...stage, images });
+                    }
+                }
+                
+                // Create slideshows for available stages
+                const slideshowsHTML = availableStages.map((stage, stageIndex) => `
                     <div class="project-slideshow-wrapper">
-                        <h4>${stage}</h4>
+                        <h4>${stage.name}</h4>
                         <div class="project-slideshow" data-project="${projectIndex}" data-stage="${stageIndex}">
-                            ${project.images.map((img, imgIndex) => `
+                            ${stage.images.map((img, imgIndex) => `
                                 <div class="project-slide ${imgIndex === 0 ? 'active' : ''}">
-                                    <img src="${project.folder}/${img}" alt="${project.name} ${imgIndex + 1}" loading="lazy">
+                                    <img src="${img}" alt="${project.name} ${stage.name} ${imgIndex + 1}" loading="lazy">
                                 </div>
                             `).join('')}
                             <a class="project-prev" onclick="changeProjectSlide(${projectIndex}, ${stageIndex}, -1)">❮</a>
@@ -509,12 +518,62 @@
                 `;
                 
                 fragment.appendChild(projectDiv);
-            });
+                allProjectSlideIndexes.push(new Array(availableStages.length).fill(1));
+            }
             
             container.appendChild(fragment);
+            window.projectSlideIndexes = allProjectSlideIndexes;
+        }
+        
+        // Load images from a specific stage folder
+        async function loadStageImages(project, stageFolder) {
+            const basePath = `${project.folder}/${stageFolder}/`;
+            const extension = '.JPG';
+            const maxImages = 50;
+            const images = [];
             
-            // Initialize project slide indexes: [projectIndex][stageIndex]
-            window.projectSlideIndexes = PROJECTS.map(() => [1, 1, 1]);
+            // Try multiple naming patterns
+            const projectName = project.name.replace(/\s+/g, '_');
+            const patterns = [
+                `${projectName}_${stageFolder}_`,     // KHAMMAM_INSIGHT_1.JPG
+                `${stageFolder}_`,                     // EXECUTION_1.JPG, DESIGN_1.JPG
+                `LIVING_ROOM_`,                        // LIVING_ROOM_1.JPG
+                `BEDROOM_`,                            // BEDROOM_1.JPG
+                `KITCHEN_`,                            // KITCHEN_1.JPG
+                `IMG_`,                                // IMG_7820.JPG
+            ];
+            
+            // Try each pattern
+            for (const prefix of patterns) {
+                const foundImages = [];
+                for (let i = 1; i <= maxImages; i++) {
+                    const imgPath = `${basePath}${prefix}${i}${extension}`;
+                    if (await checkImageExists(imgPath)) {
+                        foundImages.push(imgPath);
+                    } else {
+                        break; // Stop when sequential number breaks
+                    }
+                }
+                
+                // If we found images with this pattern, use them
+                if (foundImages.length > 0) {
+                    images.push(...foundImages);
+                    break;
+                }
+            }
+            
+            // Special handling for IMG_ pattern with non-sequential numbers
+            if (images.length === 0 && basePath.includes('HASTINAPURAM/EXECUTION')) {
+                const imgNumbers = [7820, 7822, 7826, 7831, 7834, 8606, 8824, 8827];
+                for (const num of imgNumbers) {
+                    const imgPath = `${basePath}IMG_${num}${extension}`;
+                    if (await checkImageExists(imgPath)) {
+                        images.push(imgPath);
+                    }
+                }
+            }
+            
+            return images;
         }
 
         let slideIndex = 1;
